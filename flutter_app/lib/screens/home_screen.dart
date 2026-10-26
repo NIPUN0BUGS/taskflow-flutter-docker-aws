@@ -311,11 +311,10 @@ class _FilterChip extends StatelessWidget {
         child: Text('$count', style: TextStyle(fontSize: 10, fontWeight: FontWeight.w800, color: selected ? Colors.white : const Color(0xFF737B91)))),
     ]),
     labelStyle: TextStyle(fontWeight: selected ? FontWeight.w700 : FontWeight.w600, color: selected ? Colors.white : const Color(0xFF737B91), fontSize: 12),
-    backgroundColor: Colors.white,
+    backgroundColor: selected ? const Color(0xFF3858D6) : Colors.white,
     side: BorderSide(color: selected ? const Color(0xFF3858D6) : const Color(0xFFE4E7EF)),
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(13)),
     padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 8),
-    color: selected ? const Color(0xFF3858D6) : Colors.white,
   );
 }
 
