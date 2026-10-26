@@ -16,8 +16,13 @@ class Task {
   final DateTime updatedAt;
 
   factory Task.fromJson(Map<String, dynamic> json) {
+    // PostgreSQL BIGSERIAL values can be encoded as JSON strings by node-postgres.
+    // Accept both numeric JSON values and numeric strings.
+    final rawId = json['id'];
+    final parsedId = rawId is num ? rawId.toInt() : int.parse(rawId.toString());
+
     return Task(
-      id: (json['id'] as num).toInt(),
+      id: parsedId,
       title: json['title'] as String,
       description: (json['description'] as String?) ?? '',
       completed: json['completed'] as bool,
