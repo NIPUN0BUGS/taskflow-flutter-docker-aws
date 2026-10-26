@@ -258,12 +258,12 @@ class _ProgressCard extends StatelessWidget {
       Row(children: [
         const Expanded(child: Text('Your progress', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700, fontSize: 15))),
         Container(padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-          decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.16), borderRadius: BorderRadius.circular(10)),
+          decoration: BoxDecoration(color: Colors.white.withOpacity(0.16), borderRadius: BorderRadius.circular(10)),
           child: Text(total == 0 ? 'Ready when you are' : '${(progress * 100).round()}% complete', style: const TextStyle(color: Colors.white, fontSize: 11, fontWeight: FontWeight.w700))),
       ]),
       const SizedBox(height: 18),
       ClipRRect(borderRadius: BorderRadius.circular(20), child: LinearProgressIndicator(
-        value: progress, minHeight: 7, backgroundColor: Colors.white.withValues(alpha: 0.22), color: Colors.white)),
+        value: progress, minHeight: 7, backgroundColor: Colors.white.withOpacity(0.22), color: Colors.white)),
       const SizedBox(height: 12),
       Text('$completed of $total tasks completed', style: const TextStyle(color: Color(0xFFE4E9FF), fontSize: 12)),
     ]),
@@ -307,7 +307,7 @@ class _FilterChip extends StatelessWidget {
       Text(label),
       const SizedBox(width: 7),
       Container(padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-        decoration: BoxDecoration(color: selected ? Colors.white.withValues(alpha: 0.2) : const Color(0xFFEEF0F6), borderRadius: BorderRadius.circular(7)),
+        decoration: BoxDecoration(color: selected ? Colors.white.withOpacity(0.2) : const Color(0xFFEEF0F6), borderRadius: BorderRadius.circular(7)),
         child: Text('$count', style: TextStyle(fontSize: 10, fontWeight: FontWeight.w800, color: selected ? Colors.white : const Color(0xFF737B91)))),
     ]),
     labelStyle: TextStyle(fontWeight: selected ? FontWeight.w700 : FontWeight.w600, color: selected ? Colors.white : const Color(0xFF737B91), fontSize: 12),
